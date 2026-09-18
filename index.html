@@ -29,6 +29,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600;700&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
 <style>
   :root{
     /* Official brand palette (Adriano brand guide): Azul Obra, Laranja, Grafite, Concreto, Branco */
@@ -456,14 +457,36 @@
 
   /* ---------- AREA ---------- */
   .area-box{
-    background:var(--white);border:1px solid var(--line);border-radius:20px;padding:44px;
-    display:grid;grid-template-columns:1fr 1.2fr;gap:40px;align-items:center;
+    background:var(--white);border:1px solid var(--line);border-radius:20px;padding:40px;
   }
-  .area-box h2{color:var(--navy);font-size:26px;margin-bottom:12px;}
-  .area-box p{color:var(--ink-soft);font-size:15px;line-height:1.6;}
-  .area-chips{display:flex;flex-wrap:wrap;gap:10px;}
-  .area-chip{background:var(--cream-2);border:1px solid var(--line);color:var(--navy);padding:9px 16px;border-radius:999px;font-size:13.5px;font-weight:600;}
-  .area-chip.main{background:var(--orange);border-color:var(--orange);color:#fff;}
+  .area-box h2{color:var(--navy);}
+  .area-box h2 .hl{color:var(--orange-dark);}
+  .area-box > p{color:var(--ink-soft);font-size:15.5px;line-height:1.6;margin-top:10px;max-width:60ch;}
+  .area-chips{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0 20px;}
+  .area-chip{
+    appearance:none;-webkit-appearance:none;margin:0;line-height:1;
+    display:inline-flex;align-items:center;gap:7px;
+    background:var(--cream-2);border:1.5px solid var(--line);color:var(--navy);
+    padding:9px 16px;border-radius:999px;font-size:13.5px;font-weight:600;
+    font-family:'Inter',sans-serif;cursor:pointer;transition:.18s ease;
+  }
+  .area-chip svg{width:14px;height:14px;flex-shrink:0;}
+  .area-chip:hover{border-color:var(--orange);}
+  .area-chip.main,.area-chip.active{background:var(--orange);border-color:var(--orange);color:#fff;}
+  .area-map{
+    height:380px;border-radius:14px;overflow:hidden;border:1px solid var(--line);
+    background:var(--cream-2);
+  }
+  .area-map .leaflet-tile-pane{filter:grayscale(.15) contrast(1.02);}
+  .area-map-cta{
+    margin-top:20px;display:flex;align-items:center;justify-content:space-between;
+    flex-wrap:wrap;gap:14px;
+  }
+  .area-map-cta p{font-size:14.5px;color:var(--ink-soft);}
+  @media (max-width:640px){
+    .area-box{padding:26px 20px;}
+    .area-map{height:280px;}
+  }
 
   /* ---------- REVIEWS / MAP ---------- */
   .reviews-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;}
@@ -539,7 +562,6 @@
     .services-grid{grid-template-columns:repeat(2,1fr);}
     .commit-grid{grid-template-columns:repeat(2,1fr);}
     .about-grid{grid-template-columns:1fr;}
-    .area-box{grid-template-columns:1fr;}
     .contact-grid{grid-template-columns:1fr;}
     .gallery-grid{column-count:3;}
     .footer-grid{grid-template-columns:1fr 1fr;}
@@ -983,21 +1005,27 @@
   <section id="zona">
     <div class="wrap">
       <div class="area-box">
-        <div>
-          <p class="eyebrow">Zona de trabajo</p>
-          <h2>Vigo y concellos cercanos</h2>
-          <p>Trabajo principalmente en Vigo capital, pero también me desplazo a los concellos de alrededor. Si tu obra está fuera de esta zona, escríbeme igualmente y lo hablamos.</p>
+        <p class="eyebrow">Zona de trabajo</p>
+        <h2>Si vives cerca de Vigo, <span class="hl">estoy cerca</span></h2>
+        <p>Vivo en Vigo. Conozco la zona, los precios de aquí y los proveedores de confianza. Elige tu concello o mira el mapa — si tu obra está cerca, seguramente llego.</p>
+
+        <div class="area-chips" id="areaChips">
+          <button type="button" class="area-chip main active" data-lat="42.2406" data-lng="-8.7207" data-zoom="12"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Vigo</button>
+          <button type="button" class="area-chip" data-lat="42.1700" data-lng="-8.8300" data-zoom="12"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Nigrán</button>
+          <button type="button" class="area-chip" data-lat="42.1204" data-lng="-8.8464" data-zoom="12"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Baiona</button>
+          <button type="button" class="area-chip" data-lat="42.1180" data-lng="-8.7530" data-zoom="12"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Gondomar</button>
+          <button type="button" class="area-chip" data-lat="42.1553" data-lng="-8.6167" data-zoom="12"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Porriño</button>
+          <button type="button" class="area-chip" data-lat="42.2010" data-lng="-8.6650" data-zoom="12"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Mos</button>
+          <button type="button" class="area-chip" data-lat="42.2837" data-lng="-8.6155" data-zoom="12"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Redondela</button>
+          <button type="button" class="area-chip" data-lat="42.2661" data-lng="-8.7908" data-zoom="12"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Cangas</button>
+          <button type="button" class="area-chip" data-lat="42.2836" data-lng="-8.7398" data-zoom="12"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Moaña</button>
         </div>
-        <div class="area-chips">
-          <span class="area-chip main">Vigo</span>
-          <span class="area-chip">Nigrán</span>
-          <span class="area-chip">Baiona</span>
-          <span class="area-chip">Gondomar</span>
-          <span class="area-chip">Porriño</span>
-          <span class="area-chip">Mos</span>
-          <span class="area-chip">Redondela</span>
-          <span class="area-chip">Cangas</span>
-          <span class="area-chip">Moaña</span>
+
+        <div class="area-map" id="areaMap"></div>
+
+        <div class="area-map-cta">
+          <p>¿No ves tu concello en la lista? Escríbeme igualmente y lo hablamos.</p>
+          <a class="btn btn-primary" href="https://wa.me/34692172407?text=Hola%20Adriano%2C%20quer%C3%ADa%20saber%20si%20trabajas%20en%20mi%20zona." target="_blank" rel="noopener">Escríbeme — seguramente llego</a>
         </div>
       </div>
     </div>
@@ -1146,6 +1174,7 @@
   </div>
 </div>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
 <script>
   // stats ticker: keep "hace X días" accurate automatically from a fixed anchor date
   const daysAgoEl = document.getElementById('daysAgo');
@@ -1154,6 +1183,63 @@
     const diffDays = Math.max(0, Math.floor((Date.now() - anchor.getTime()) / 86400000));
     daysAgoEl.textContent = diffDays;
   }
+
+  // service-area map: Leaflet + free OpenStreetMap tiles (no API key needed).
+  // Clicking a chip flies the map to that concello; a translucent circle
+  // around Vigo gives a rough sense of the working radius.
+  (function initAreaMap(){
+    const mapEl = document.getElementById('areaMap');
+    if (!mapEl || typeof L === 'undefined') return;
+
+    const vigo = [42.2406, -8.7207];
+    const map = L.map(mapEl, { scrollWheelZoom: false }).setView(vigo, 10);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+      maxZoom: 18
+    }).addTo(map);
+
+    L.circle(vigo, {
+      radius: 25000,
+      color: '#f47c20',
+      weight: 1.5,
+      fillColor: '#f47c20',
+      fillOpacity: 0.08
+    }).addTo(map);
+
+    const places = [
+      { name: 'Vigo',      lat: 42.2406, lng: -8.7207, main: true },
+      { name: 'Nigrán',    lat: 42.1700, lng: -8.8300 },
+      { name: 'Baiona',    lat: 42.1204, lng: -8.8464 },
+      { name: 'Gondomar',  lat: 42.1180, lng: -8.7530 },
+      { name: 'Porriño',   lat: 42.1553, lng: -8.6167 },
+      { name: 'Mos',       lat: 42.2010, lng: -8.6650 },
+      { name: 'Redondela', lat: 42.2837, lng: -8.6155 },
+      { name: 'Cangas',    lat: 42.2661, lng: -8.7908 },
+      { name: 'Moaña',     lat: 42.2836, lng: -8.7398 }
+    ];
+    places.forEach(function(p){
+      L.circleMarker([p.lat, p.lng], {
+        radius: p.main ? 7 : 5,
+        color: p.main ? '#f47c20' : '#102a43',
+        fillColor: p.main ? '#f47c20' : '#102a43',
+        fillOpacity: 1,
+        weight: 2
+      }).addTo(map).bindTooltip(p.name);
+    });
+
+    document.querySelectorAll('#areaChips .area-chip').forEach(function(chip){
+      chip.addEventListener('click', function(){
+        document.querySelectorAll('#areaChips .area-chip').forEach(function(c){ c.classList.remove('active'); });
+        chip.classList.add('active');
+        const lat = parseFloat(chip.dataset.lat), lng = parseFloat(chip.dataset.lng);
+        const zoom = parseFloat(chip.dataset.zoom) || 12;
+        map.flyTo([lat, lng], zoom, { duration: 0.6 });
+      });
+    });
+
+    setTimeout(function(){ map.invalidateSize(); }, 250);
+  })();
 
   // radial reveal buttons: on hover, a circle grows from the pointer's entry
   // point revealing a second (darker/inverted) copy of the label underneath,
