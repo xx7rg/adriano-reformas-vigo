@@ -50,6 +50,7 @@ html = html.replace("{{LOGO_MARK}}", "selected/logo_mark.png")
 html = html.replace("{{LOGO_WORD}}", "selected/logo_wordmark.png")
 html = html.replace("{{X7RG_LOGO}}", "selected/x7rg_mark.png")
 html = html.replace("{{HERO}}", "selected/img_38.jpg")
+html = html.replace("{{FAVICON}}", "selected/favicon.png")
 
 for num, cat, cap, wide in items:
     token = "{{IMG_%s}}" % num

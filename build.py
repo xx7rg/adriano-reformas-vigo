@@ -60,6 +60,7 @@ html = html.replace("{{LOGO_MARK}}", b64(os.path.join(SEL, "logo_mark.png")))
 html = html.replace("{{LOGO_WORD}}", b64(os.path.join(SEL, "logo_wordmark.png")))
 html = html.replace("{{X7RG_LOGO}}", b64(os.path.join(SEL, "x7rg_mark.png")))
 html = html.replace("{{HERO}}", b64(os.path.join(SEL, "img_38.jpg")))
+html = html.replace("{{FAVICON}}", b64(os.path.join(SEL, "favicon.png")))
 
 for num, cat, cap, wide in items:
     token = "{{IMG_%s}}" % num
