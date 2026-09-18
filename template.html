@@ -1,0 +1,1142 @@
+<title>Adriano Reformas Vigo</title>
+<meta name="description" content="30 años de experiencia en reforma y construcción. Actualmente en Vigo: alicatados, albañilería, pintura y reformas integrales con trabajo directo y presupuesto claro.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600;700&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    /* Official brand palette (Adriano brand guide): Azul Obra, Laranja, Grafite, Concreto, Branco */
+    --navy:#102a43;
+    --navy-dark:#0a1c2f;
+    --navy-soft:#1e3f60;
+    --orange:#f47c20;
+    --orange-dark:#d9660e;
+    --cream:#f6f3ec;
+    --cream-2:#efe9dd;
+    --ink:#263238;
+    --ink-soft:#516070;
+    --line:#e2ddd0;
+    --white:#ffffff;
+    --header-bg:rgba(246,243,236,.92);
+    --radius:14px;
+    --shadow:0 20px 45px -20px rgba(8,26,44,0.35);
+    --maxw:1180px;
+  }
+  /* This page is intentionally a single, permanently light look — it does not follow the viewer's system dark-mode setting. */
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:'Inter',system-ui,sans-serif;
+    color:var(--ink);
+    background:var(--cream);
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%;display:block;}
+  h1,h2,h3,h4{font-family:'Poppins',sans-serif;margin:0;line-height:1.15;color:var(--navy);}
+  p{margin:0;}
+  a{color:inherit;text-decoration:none;}
+  ul{margin:0;padding:0;list-style:none;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px;}
+  .eyebrow{
+    display:inline-block;
+    font-family:'Poppins',sans-serif;font-weight:700;font-size:12.5px;
+    letter-spacing:.16em;text-transform:uppercase;color:var(--orange-dark);
+    margin-bottom:14px;
+    padding:5px 13px;
+    background:var(--cream-2);
+    border-radius:999px;
+  }
+  .btn{
+    position:relative;isolation:isolate;overflow:hidden;
+    display:inline-flex;align-items:center;justify-content:center;gap:10px;
+    font-family:'Poppins',sans-serif;font-weight:600;font-size:15.5px;
+    padding:14px 26px;border-radius:999px;cursor:pointer;border:2px solid transparent;
+    transition:transform .18s ease, box-shadow .18s ease;
+    white-space:nowrap;
+  }
+  .btn:active{transform:scale(.97);}
+  .btn-primary{background:var(--orange);color:#fff;box-shadow:0 12px 24px -10px rgba(239,122,30,.6);}
+  .btn-primary:hover{box-shadow:0 14px 28px -10px rgba(217,102,14,.7);}
+  .btn-outline{border-color:var(--line);color:var(--navy);background:var(--white);}
+  .btn-navy{background:var(--navy);color:#fff;}
+  .btn svg{width:19px;height:19px;flex-shrink:0;position:relative;z-index:1;}
+
+  /* Radial reveal hover: two stacked copies of the label/icon, the top one
+     clipped by a circle that grows from the pointer's entry point (JS-driven). */
+  .btn-face,.btn-overlay{
+    display:inline-flex;align-items:center;justify-content:center;gap:10px;
+    white-space:nowrap;
+  }
+  .btn-face{position:relative;z-index:1;}
+  .btn-overlay{
+    position:absolute;inset:0;z-index:2;pointer-events:none;
+    clip-path:circle(0% at 50% 50%);-webkit-clip-path:circle(0% at 50% 50%);
+    transition:clip-path .5s cubic-bezier(.65,0,.35,1);
+  }
+  .btn-primary .btn-overlay{background:var(--orange-dark);color:#fff;}
+  .btn-outline .btn-overlay{background:var(--cream-2);color:var(--navy);}
+  .btn-navy .btn-overlay{background:var(--navy-dark);color:#fff;}
+  .hero .btn-outline .btn-overlay{background:#fff;color:var(--navy);}
+  @media (prefers-reduced-motion: reduce){
+    .btn-overlay{transition:none;}
+  }
+
+  /* ---------- HEADER ---------- */
+  .site-header{
+    position:sticky;top:env(safe-area-inset-top, 0px);z-index:60;
+    background:var(--header-bg);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .header-inner{display:flex;align-items:center;justify-content:space-between;padding:12px 24px;gap:20px;}
+  .brand{display:flex;align-items:center;gap:12px;}
+  .brand img{width:46px;height:46px;object-fit:contain;}
+  .brand-text{display:flex;flex-direction:column;line-height:1.1;}
+  .brand-text strong{font-family:'Poppins',sans-serif;font-weight:800;font-size:20px;letter-spacing:.02em;color:var(--navy);}
+  .brand-text strong span{color:var(--orange);}
+  .brand-text small{font-size:10.5px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-soft);}
+  nav.main-nav{display:flex;align-items:center;gap:30px;}
+  nav.main-nav a{font-weight:600;font-size:14.5px;color:var(--ink);position:relative;padding:4px 0;}
+  nav.main-nav a::after{content:"";position:absolute;left:0;right:0;bottom:-3px;height:2px;background:var(--orange);transform:scaleX(0);transform-origin:left;transition:transform .2s ease;}
+  nav.main-nav a:hover::after{transform:scaleX(1);}
+  .header-cta{display:flex;align-items:center;gap:12px;}
+  .header-cta .btn{padding:11px 20px;font-size:14px;}
+  .burger{display:none;background:none;border:none;cursor:pointer;padding:6px;}
+  .burger span{display:block;width:24px;height:2px;background:var(--navy);margin:5px 0;border-radius:2px;}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    padding:150px 0 100px;
+    overflow:hidden;
+    isolation:isolate;
+  }
+  .hero-bg{
+    position:absolute;inset:0;z-index:-2;
+    background-size:cover;background-position:center 40%;
+  }
+  .hero-bg::after{
+    content:"";position:absolute;inset:0;
+    background:
+      linear-gradient(100deg, rgba(8,20,34,.95) 0%, rgba(8,20,34,.88) 32%, rgba(8,20,34,.62) 62%, rgba(8,20,34,.42) 100%),
+      linear-gradient(0deg, rgba(8,20,34,.5), rgba(8,20,34,0) 45%);
+  }
+  .hero-inner{max-width:660px;}
+  .hero .eyebrow{background:rgba(255,255,255,.14);color:#fff;}
+  .hero h1{font-size:clamp(32px,4.6vw,50px);color:#fff;font-weight:800;letter-spacing:-.01em;}
+  .hero h1 .hl{color:var(--orange);}
+  .hero-lead{font-size:17.5px;line-height:1.65;color:rgba(255,255,255,.84);max-width:50ch;margin-top:18px;}
+  .hero-ctas{display:flex;flex-wrap:wrap;gap:14px;margin-top:32px;}
+  .hero .btn-outline{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.5);color:#fff;}
+  .hero .btn-outline:hover{border-color:#fff;}
+  .hero-checks{display:flex;flex-wrap:wrap;gap:14px 32px;margin-top:36px;}
+  .hero-check{display:flex;align-items:center;gap:9px;color:rgba(255,255,255,.92);font-size:14px;font-weight:600;}
+  .hero-check svg{width:19px;height:19px;color:#3ddc84;flex-shrink:0;}
+
+  /* ---------- STATS BAR ---------- */
+  .stats-bar{background:var(--navy);}
+  .stats-ticker{
+    background:var(--navy-dark);
+    padding:11px 24px;text-align:center;
+    font-size:12.5px;font-weight:600;letter-spacing:.02em;color:rgba(255,255,255,.85);
+  }
+  .stats-ticker .dot{position:relative;display:inline-block;width:7px;height:7px;border-radius:50%;background:#3ddc84;margin-right:9px;vertical-align:1px;animation:dotPulse 1.8s ease-in-out infinite;}
+  .stats-ticker .dot::after{content:'';position:absolute;inset:-5px;border-radius:50%;background:#3ddc84;animation:dotPing 1.8s cubic-bezier(0,0,.2,1) infinite;}
+  @keyframes dotPulse{0%,100%{opacity:1;}50%{opacity:.45;}}
+  @keyframes dotPing{0%{transform:scale(.5);opacity:.55;}75%,100%{transform:scale(2.4);opacity:0;}}
+  @media (prefers-reduced-motion: reduce){
+    .stats-ticker .dot{animation:none;}
+    .stats-ticker .dot::after{animation:none;display:none;}
+  }
+  .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);padding:38px 24px;text-align:center;}
+  .stats-grid > div{padding:6px 12px;border-left:1px solid rgba(255,255,255,.14);}
+  .stats-grid > div:first-child{border-left:none;}
+  .stat-num{font-family:'Poppins',sans-serif;font-weight:800;font-size:clamp(26px,3.2vw,38px);color:#fff;line-height:1;}
+  .stat-num .unit{color:var(--orange);}
+  .stat-lbl{margin-top:8px;font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:rgba(255,255,255,.68);}
+
+  /* ---------- SECTION GENERIC ---------- */
+  section{padding:84px 0;}
+  .section-head{max-width:640px;margin-bottom:48px;}
+  .section-head h2{font-size:clamp(26px,3.4vw,38px);}
+  .section-head p{margin-top:14px;font-size:16.5px;line-height:1.6;color:var(--ink-soft);}
+  .band-alt{background:var(--white);}
+
+  /* ---------- SERVICES ---------- */
+  .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+  .service-card{
+    position:relative;
+    background:var(--white);border:1px solid var(--line);border-radius:var(--radius);
+    padding:30px 26px;transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+  }
+  .service-card:hover{transform:translateY(-5px);box-shadow:var(--shadow);border-color:transparent;}
+  .service-card.featured{
+    border:2px solid var(--orange);
+    box-shadow:0 16px 32px -18px rgba(244,124,32,.45);
+  }
+  .service-card.featured:hover{box-shadow:0 20px 38px -16px rgba(244,124,32,.5);}
+  .service-badge{
+    position:absolute;top:-13px;left:24px;z-index:1;
+    background:var(--orange);color:#fff;
+    font-family:'Poppins',sans-serif;font-weight:700;font-size:11px;letter-spacing:.04em;
+    text-transform:uppercase;padding:6px 14px;border-radius:999px;
+    box-shadow:0 8px 16px -8px rgba(244,124,32,.6);
+  }
+  .service-icon{
+    width:52px;height:52px;border-radius:13px;background:var(--cream-2);
+    display:flex;align-items:center;justify-content:center;margin-bottom:18px;
+    transition:transform .35s cubic-bezier(.34,1.56,.64,1),background .3s ease;
+  }
+  .service-card:hover .service-icon{transform:scale(1.08) rotate(-4deg);background:var(--orange);}
+  .service-icon svg{width:26px;height:26px;color:var(--orange-dark);transition:color .3s ease;}
+  .service-card:hover .service-icon svg{color:#fff;}
+  .service-card h3{font-size:18.5px;margin-bottom:9px;}
+  .service-card p{font-size:14.5px;line-height:1.6;color:var(--ink-soft);}
+  .service-more{
+    display:inline-flex;align-items:center;gap:6px;margin-top:16px;
+    font-family:'Poppins',sans-serif;font-size:13.5px;font-weight:700;color:var(--orange-dark);
+    text-decoration:none;
+    opacity:0;transform:translateY(6px);
+    transition:opacity .3s ease,transform .3s ease;
+  }
+  .service-card:hover .service-more{opacity:1;transform:translateY(0);}
+  .service-more svg{width:15px;height:15px;transition:transform .25s ease;}
+  .service-card:hover .service-more svg{transform:translateX(3px);}
+  .service-card.featured .service-more{
+    opacity:1;transform:none;
+    background:var(--orange);color:#fff;
+    padding:10px 18px;border-radius:999px;
+    box-shadow:0 12px 22px -10px rgba(244,124,32,.55);
+    transition:background .2s ease,transform .3s ease;
+  }
+  .service-card.featured .service-more:hover{background:var(--orange-dark);transform:translateY(-2px);}
+  .service-card.featured .service-more svg{color:#fff;}
+  @media (hover: none){
+    .service-more{opacity:1;transform:none;}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .service-card,.service-icon,.service-icon svg,.service-more,.service-more svg{transition:none;}
+    .service-more{opacity:1;transform:none;}
+  }
+
+  /* ---------- STEPS (Cómo funciona) ---------- */
+  .steps-grid{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:32px;
+    text-align:center;position:relative;margin-top:8px;
+  }
+  .steps-grid::before{
+    content:"";position:absolute;top:56px;left:12.5%;right:12.5%;height:2px;
+    background:var(--line);z-index:0;
+  }
+  .step-item{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;}
+  .step-num{
+    font-family:'Poppins',sans-serif;font-weight:800;font-size:15px;color:var(--line);
+    margin-bottom:6px;
+  }
+  .step-icon{
+    position:relative;z-index:1;width:72px;height:72px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;margin-bottom:18px;
+    background:var(--cream);
+    transition:transform .35s cubic-bezier(.34,1.56,.64,1),box-shadow .35s ease;
+  }
+  .step-icon::before,.step-icon::after{
+    content:"";position:absolute;inset:0;border-radius:50%;
+    background:inherit;pointer-events:none;
+    animation:stepPulse 2.8s ease-out infinite;
+  }
+  .step-icon::after{animation-delay:.9s;}
+  .step-item:nth-child(2) .step-icon::before,.step-item:nth-child(2) .step-icon::after{animation-delay:.5s;}
+  .step-item:nth-child(2) .step-icon::after{animation-delay:1.4s;}
+  .step-item:nth-child(3) .step-icon::before,.step-item:nth-child(3) .step-icon::after{animation-delay:1s;}
+  .step-item:nth-child(3) .step-icon::after{animation-delay:1.9s;}
+  .step-item:nth-child(4) .step-icon::before,.step-item:nth-child(4) .step-icon::after{animation-delay:1.5s;}
+  .step-item:nth-child(4) .step-icon::after{animation-delay:2.4s;}
+  @keyframes stepPulse{
+    0%{transform:scale(1);opacity:.6;}
+    75%,100%{transform:scale(1.6);opacity:0;}
+  }
+  .step-icon svg{position:relative;z-index:1;width:28px;height:28px;}
+  .step-item:hover .step-icon{transform:translateY(-5px) scale(1.07);box-shadow:0 14px 26px -10px rgba(16,42,67,.32);}
+  .step-icon.c-blue{background:#e3edfb;color:#2f5fb0;}
+  .step-icon.c-orange{background:#fdeadb;color:var(--orange-dark);}
+  .step-icon.c-green{background:#e2f5e9;color:#2e9e5b;}
+  .step-icon.c-amber{background:#fdf3d6;color:#c08a12;}
+  .steps-grid .step-item{opacity:0;transform:translateY(26px) scale(.94);}
+  .steps-grid.in-view .step-item{
+    animation:stepRise .65s cubic-bezier(.22,1,.36,1) forwards;
+  }
+  .steps-grid.in-view .step-item:nth-child(1){animation-delay:.05s;}
+  .steps-grid.in-view .step-item:nth-child(2){animation-delay:.18s;}
+  .steps-grid.in-view .step-item:nth-child(3){animation-delay:.31s;}
+  .steps-grid.in-view .step-item:nth-child(4){animation-delay:.44s;}
+  @keyframes stepRise{
+    to{opacity:1;transform:translateY(0) scale(1);}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .step-icon::before,.step-icon::after{animation:none;display:none;}
+    .steps-grid .step-item{opacity:1;transform:none;}
+    .steps-grid.in-view .step-item{animation:none;}
+  }
+  .step-item h3{font-size:17px;margin-bottom:9px;}
+  .step-item p{color:var(--ink-soft);font-size:14.5px;line-height:1.62;max-width:30ch;}
+  .step-item p strong{color:var(--navy);}
+  .step-day{
+    display:inline-flex;align-items:center;gap:6px;margin-top:16px;
+    font-size:12px;font-weight:700;color:var(--navy);background:var(--cream-2);
+    padding:6px 13px;border-radius:999px;white-space:nowrap;
+  }
+  .step-day svg{width:13px;height:13px;flex-shrink:0;}
+  .steps-cta{text-align:center;margin-top:52px;}
+  .steps-cta .btn svg{width:17px;height:17px;}
+  .steps-cta .note{
+    margin-top:14px;font-size:13.5px;color:var(--ink-soft);
+    display:flex;align-items:center;justify-content:center;gap:7px;
+  }
+  .steps-cta .note svg{width:16px;height:16px;color:#2e9e5b;flex-shrink:0;}
+
+  /* ---------- GALLERY ---------- */
+  .filter-tabs{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:30px;}
+  .filter-tab{
+    padding:9px 18px;border-radius:999px;border:1.5px solid var(--line);background:var(--white);
+    font-weight:600;font-size:13.5px;cursor:pointer;color:var(--ink-soft);transition:.18s ease;
+  }
+  .filter-tab.active, .filter-tab:hover{background:var(--orange);border-color:var(--orange);color:#fff;}
+  .gallery-grid{column-count:4;column-gap:16px;}
+  .g-item{position:relative;border-radius:12px;overflow:hidden;cursor:pointer;background:var(--cream-2);break-inside:avoid;margin:0 0 16px;}
+  .g-item img{width:100%;height:auto;display:block;transition:transform .4s ease;}
+  .g-item:hover img{transform:scale(1.07);}
+  .g-item .g-cap{
+    position:absolute;left:0;right:0;bottom:0;padding:10px 12px 9px;
+    background:linear-gradient(0deg, rgba(8,20,34,.85), rgba(8,20,34,0));
+    color:#fff;font-size:12.5px;font-weight:600;opacity:0;transform:translateY(6px);
+    transition:.2s ease;
+  }
+  .g-item:hover .g-cap{opacity:1;transform:translateY(0);}
+  .g-badge{
+    position:absolute;top:10px;left:10px;background:var(--orange);color:#fff;
+    font-family:'Poppins',sans-serif;font-weight:700;font-size:10.5px;letter-spacing:.06em;
+    text-transform:uppercase;padding:5px 10px;border-radius:999px;
+  }
+  .g-item[data-cat="antes"] .g-badge{background:var(--navy);}
+
+  /* lightbox */
+  .lightbox{position:fixed;inset:0;background:rgba(6,14,24,.92);z-index:100;display:none;align-items:center;justify-content:center;padding:30px;}
+  .lightbox.open{display:flex;}
+  .lightbox img{max-width:min(900px,92vw);max-height:82vh;border-radius:10px;box-shadow:0 30px 60px rgba(0,0,0,.5);}
+  .lightbox-cap{color:#fff;text-align:center;margin-top:16px;font-size:14.5px;font-weight:600;}
+  .lightbox-close{position:absolute;top:24px;right:28px;width:42px;height:42px;border-radius:50%;background:rgba(255,255,255,.12);border:none;color:#fff;font-size:22px;cursor:pointer;}
+  .lightbox-close:hover{background:rgba(255,255,255,.22);}
+
+  /* ---------- ABOUT ---------- */
+  .about-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;}
+  .about-copy h2 .hl{color:var(--orange-dark);}
+  .about-copy .lead{font-size:17.5px;font-weight:600;color:var(--navy);margin-bottom:16px;line-height:1.6;}
+  .about-copy p{font-size:15.5px;line-height:1.75;color:var(--ink-soft);margin-bottom:16px;}
+  .about-copy p strong{color:var(--navy);}
+  .about-list{display:flex;flex-direction:column;gap:14px;margin:22px 0 28px;}
+  .about-list li{display:flex;gap:12px;align-items:center;font-size:15px;font-weight:600;color:var(--navy);}
+  .about-list .ai-ico{
+    flex-shrink:0;width:34px;height:34px;border-radius:10px;background:var(--cream-2);
+    display:flex;align-items:center;justify-content:center;color:var(--orange-dark);
+  }
+  .about-list .ai-ico svg{width:17px;height:17px;}
+  .about-photos{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  .ap-item{display:flex;flex-direction:column;gap:8px;}
+  .ap-photo{
+    position:relative;overflow:hidden;border-radius:14px;
+    box-shadow:0 16px 30px -18px rgba(16,42,67,.4);
+    transition:transform .35s cubic-bezier(.22,1,.36,1),box-shadow .35s ease;
+  }
+  .ap-item:hover .ap-photo{transform:translateY(-6px);box-shadow:0 22px 38px -16px rgba(16,42,67,.5);}
+  .ap-item img{
+    width:100%;aspect-ratio:4/3.3;object-fit:cover;display:block;
+    transition:transform .5s ease;
+  }
+  .ap-item:hover img{transform:scale(1.08);}
+  .ap-photo::after{
+    content:"";position:absolute;inset:0;
+    background:linear-gradient(0deg, rgba(8,20,34,.32), rgba(8,20,34,0) 55%);
+    opacity:0;transition:opacity .35s ease;
+  }
+  .ap-item:hover .ap-photo::after{opacity:1;}
+  .ap-cap{font-size:12.5px;font-weight:700;color:var(--ink-soft);text-align:center;letter-spacing:.02em;transition:color .3s ease;}
+  .ap-item:hover .ap-cap{color:var(--orange-dark);}
+  @media (prefers-reduced-motion: reduce){
+    .ap-photo,.ap-item img,.ap-photo::after,.ap-cap{transition:none;}
+  }
+
+  /* ---------- QUOTE BAND ---------- */
+  .quote-band{padding:64px 0;}
+  .quote-card{
+    position:relative;overflow:hidden;isolation:isolate;
+    background:var(--navy);border-radius:var(--radius);border-left:5px solid var(--orange);
+    padding:48px 44px;
+    display:grid;grid-template-columns:1.15fr 1fr;gap:48px;align-items:center;
+    box-shadow:0 30px 60px -28px rgba(10,28,47,.55);
+    opacity:0;transform:translateY(28px);
+    transition:opacity .7s ease,transform .7s cubic-bezier(.22,1,.36,1);
+  }
+  .quote-band.in-view .quote-card{opacity:1;transform:translateY(0);}
+  .quote-card::after{
+    content:"";position:absolute;top:-40px;right:-40px;width:280px;height:280px;z-index:-1;
+    background:radial-gradient(circle, rgba(244,124,32,.22), transparent 70%);
+    pointer-events:none;
+  }
+  .quote-main,.quote-checks{position:relative;z-index:1;}
+  .quote-mark{font-family:'Poppins',sans-serif;font-weight:800;font-size:52px;line-height:1;color:var(--orange);margin-bottom:4px;}
+  .quote-text{color:#fff;font-family:'Poppins',sans-serif;font-weight:700;font-size:21.5px;line-height:1.45;margin-bottom:14px;}
+  .quote-by{color:rgba(255,255,255,.6);font-size:13.5px;font-weight:600;}
+  .quote-checks{display:flex;flex-direction:column;gap:15px;}
+  .quote-checks li{
+    display:flex;gap:10px;align-items:flex-start;color:rgba(255,255,255,.94);font-size:14.5px;font-weight:600;line-height:1.5;
+    opacity:0;transform:translateX(14px);
+    transition:opacity .5s ease,transform .5s ease;
+  }
+  .quote-band.in-view .quote-checks li{opacity:1;transform:translateX(0);}
+  .quote-band.in-view .quote-checks li:nth-child(1){transition-delay:.18s;}
+  .quote-band.in-view .quote-checks li:nth-child(2){transition-delay:.28s;}
+  .quote-band.in-view .quote-checks li:nth-child(3){transition-delay:.38s;}
+  .quote-band.in-view .quote-checks li:nth-child(4){transition-delay:.48s;}
+  .quote-band.in-view .quote-checks li:nth-child(5){transition-delay:.58s;}
+  .quote-checks svg{width:17px;height:17px;color:var(--orange);flex-shrink:0;margin-top:1px;}
+  @media (max-width:900px){
+    .quote-card{grid-template-columns:1fr;gap:28px;padding:38px 30px;}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .quote-card,.quote-checks li{opacity:1;transform:none;transition:none;}
+  }
+
+  /* ---------- COMMITMENTS ---------- */
+  .commit-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  .commit-card{
+    padding:26px;border-radius:var(--radius);border:1px solid var(--line);background:var(--cream);
+    transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+  }
+  .commit-card:hover{transform:translateY(-5px);box-shadow:var(--shadow);border-color:transparent;}
+  .commit-icon{
+    width:52px;height:52px;border-radius:13px;background:var(--cream-2);
+    display:flex;align-items:center;justify-content:center;margin-bottom:16px;
+    transition:transform .35s cubic-bezier(.34,1.56,.64,1),background .3s ease;
+  }
+  .commit-card:hover .commit-icon{transform:scale(1.08) rotate(-4deg);background:var(--orange);}
+  .commit-icon svg{width:24px;height:24px;color:var(--orange-dark);transition:color .3s ease;}
+  .commit-card:hover .commit-icon svg{color:#fff;}
+  .commit-card h3{font-size:16.5px;margin-bottom:7px;}
+  .commit-card p{font-size:14px;color:var(--ink-soft);line-height:1.6;}
+  @media (prefers-reduced-motion: reduce){
+    .commit-card,.commit-icon,.commit-icon svg{transition:none;}
+  }
+
+  /* ---------- AREA ---------- */
+  .area-box{
+    background:var(--white);border:1px solid var(--line);border-radius:20px;padding:44px;
+    display:grid;grid-template-columns:1fr 1.2fr;gap:40px;align-items:center;
+  }
+  .area-box h2{color:var(--navy);font-size:26px;margin-bottom:12px;}
+  .area-box p{color:var(--ink-soft);font-size:15px;line-height:1.6;}
+  .area-chips{display:flex;flex-wrap:wrap;gap:10px;}
+  .area-chip{background:var(--cream-2);border:1px solid var(--line);color:var(--navy);padding:9px 16px;border-radius:999px;font-size:13.5px;font-weight:600;}
+  .area-chip.main{background:var(--orange);border-color:var(--orange);color:#fff;}
+
+  /* ---------- REVIEWS / MAP ---------- */
+  .reviews-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;}
+  .review-card{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:32px;}
+  .review-card .stars{color:var(--orange);font-size:22px;letter-spacing:3px;margin-bottom:14px;}
+  .review-card svg.pin{width:30px;height:30px;color:var(--orange-dark);margin-bottom:14px;}
+  .review-card h3{font-size:19px;margin-bottom:9px;}
+  .review-card p{font-size:14.5px;line-height:1.6;color:var(--ink-soft);margin-bottom:20px;}
+
+  /* ---------- CONTACT ---------- */
+  .contact-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:50px;}
+  .contact-card{background:var(--white);border:1px solid var(--line);border-radius:20px;padding:40px;}
+  .contact-card h3{color:var(--navy);font-size:22px;margin-bottom:8px;}
+  .contact-card p.lead{color:var(--ink-soft);font-size:15px;line-height:1.6;margin-bottom:26px;}
+  .contact-line{display:flex;align-items:center;gap:14px;padding:14px 0;border-top:1px solid var(--line);}
+  .contact-line:first-of-type{border-top:none;}
+  .contact-line .ic{width:42px;height:42px;border-radius:11px;background:var(--cream-2);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+  .contact-line .ic svg{width:20px;height:20px;color:var(--orange-dark);}
+  .contact-line span{font-size:14.5px;color:var(--ink-soft);display:block;}
+  .contact-line strong{font-size:15.5px;font-weight:700;color:var(--navy);}
+  .contact-card .btn{width:100%;margin-top:24px;}
+
+  .form-card{background:var(--white);border:1px solid var(--line);border-radius:20px;padding:40px;}
+  .form-card h3{font-size:21px;margin-bottom:8px;}
+  .form-card p.lead{color:var(--ink-soft);font-size:14.5px;margin-bottom:26px;}
+  .field{margin-bottom:18px;}
+  .field label{display:block;font-size:13.5px;font-weight:600;color:var(--navy);margin-bottom:7px;}
+  .field input, .field textarea, .field select{
+    width:100%;border:1.5px solid var(--line);border-radius:10px;padding:13px 14px;
+    font-family:'Inter',sans-serif;font-size:14.5px;background:var(--cream);color:var(--ink);
+    transition:border-color .18s ease;
+  }
+  .field input:focus, .field textarea:focus, .field select:focus{outline:none;border-color:var(--orange);}
+  .field textarea{resize:vertical;min-height:100px;}
+  .form-note{font-size:12.5px;color:var(--ink-soft);margin-top:14px;line-height:1.5;}
+
+  /* ---------- FOOTER ---------- */
+  footer{background:var(--white);color:var(--ink-soft);padding:56px 0 26px;border-top:1px solid var(--line);}
+  .footer-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:40px;padding-bottom:34px;border-bottom:1px solid var(--line);}
+  .footer-brand{margin-bottom:16px;}
+  .footer-brand img{height:52px;width:auto;object-fit:contain;}
+  footer p{font-size:14px;line-height:1.65;max-width:36ch;}
+  footer h4{color:var(--navy);font-family:'Poppins',sans-serif;font-size:14px;margin-bottom:16px;letter-spacing:.03em;}
+  footer ul li{margin-bottom:10px;}
+  footer ul li a{font-size:14px;color:var(--ink-soft);transition:color .15s ease;}
+  footer ul li a:hover{color:var(--orange-dark);}
+  .footer-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;padding-top:22px;font-size:12.5px;color:var(--ink-soft);}
+  .footer-credit{display:flex;align-items:center;justify-content:center;gap:9px;margin-top:18px;padding-top:18px;border-top:1px solid var(--line);font-size:12.5px;font-weight:400;color:var(--ink-soft);}
+  .footer-credit img{height:20px;width:auto;object-fit:contain;}
+  .footer-credit a{font-weight:400;color:var(--ink-soft);text-decoration:none;border-bottom:1px solid transparent;transition:color .15s ease,border-color .15s ease;}
+  .footer-credit a:hover{color:var(--orange-dark);border-color:var(--orange-dark);}
+
+  /* ---------- WHATSAPP FLOAT ---------- */
+  .wa-float{
+    position:fixed;bottom:24px;right:24px;z-index:70;
+    width:60px;height:60px;border-radius:50%;background:#25D366;
+    display:flex;align-items:center;justify-content:center;box-shadow:0 14px 30px -8px rgba(0,0,0,.45);
+    transition:transform .18s ease;
+  }
+  .wa-float:hover{transform:scale(1.08);}
+  .wa-float svg{width:30px;height:30px;color:#fff;}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width:980px){
+    nav.main-nav{display:none;}
+    .header-cta .btn span.long{display:none;}
+    .burger{display:block;}
+    .hero{padding:130px 0 80px;}
+    .stats-grid{grid-template-columns:repeat(2,1fr);row-gap:28px;}
+    .stats-grid > div:nth-child(3){border-left:none;}
+    .steps-grid{grid-template-columns:repeat(2,1fr);row-gap:44px;}
+    .steps-grid::before{display:none;}
+    .services-grid{grid-template-columns:repeat(2,1fr);}
+    .commit-grid{grid-template-columns:repeat(2,1fr);}
+    .about-grid{grid-template-columns:1fr;}
+    .area-box{grid-template-columns:1fr;}
+    .contact-grid{grid-template-columns:1fr;}
+    .gallery-grid{column-count:3;}
+    .footer-grid{grid-template-columns:1fr 1fr;}
+  }
+  @media (max-width:640px){
+    .header-cta span.long{display:none;}
+    .brand-text small{display:none;}
+    .header-inner{padding:10px 16px;gap:10px;}
+    .header-cta{gap:8px;}
+    .header-cta .btn{padding:9px 14px;font-size:12.5px;white-space:nowrap;}
+    .services-grid{grid-template-columns:1fr;}
+    .commit-grid{grid-template-columns:1fr;}
+    .about-photos{gap:10px;}
+    .gallery-grid{column-count:2;}
+    .steps-grid{grid-template-columns:1fr;row-gap:36px;}
+    .footer-grid{grid-template-columns:1fr;}
+    section{padding:60px 0;}
+    .hero{padding:110px 0 60px;}
+    .stats-grid{grid-template-columns:1fr;row-gap:24px;}
+    .stats-grid > div{border-left:none !important;}
+  }
+
+  /* mobile nav drawer */
+  .mobile-nav{
+    position:fixed;inset:0 0 0 auto;width:min(320px,86vw);background:var(--white);z-index:90;
+    box-shadow:-14px 0 40px rgba(0,0,0,.2);transform:translateX(100%);transition:transform .25s ease;
+    padding:28px 26px;display:flex;flex-direction:column;gap:22px;
+  }
+  .mobile-nav.open{transform:translateX(0);}
+  .mobile-nav a{font-family:'Poppins',sans-serif;font-weight:600;font-size:17px;color:var(--navy);}
+  .mobile-scrim{position:fixed;inset:0;background:rgba(8,20,34,.5);z-index:85;display:none;}
+  .mobile-scrim.open{display:block;}
+  .mobile-nav .close-x{align-self:flex-end;background:none;border:none;font-size:22px;cursor:pointer;color:var(--navy);}
+</style>
+
+<header class="site-header">
+  <div class="header-inner wrap">
+    <a href="#top" class="brand">
+      <img src="{{LOGO_MARK}}" alt="Adriano, Alicatados y Reforma en General">
+      <div class="brand-text">
+        <strong>ADRI<span>A</span>NO</strong>
+        <small>Alicatado y reforma en general</small>
+      </div>
+    </a>
+    <nav class="main-nav">
+      <a href="#servicios">Servicios</a>
+      <a href="#proyectos">Proyectos</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#opiniones">Opiniones</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <div class="header-cta">
+      <a class="btn btn-primary" href="https://wa.me/34692172407?text=Hola%20Adriano%2C%20me%20gustar%C3%ADa%20pedir%20presupuesto%20para%20una%20reforma." target="_blank" rel="noopener">Presupuesto gratis</a>
+      <button class="burger" id="burgerBtn" aria-label="Abrir menú"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-scrim" id="scrim"></div>
+<div class="mobile-nav" id="mobileNav">
+  <button class="close-x" id="closeNav">&times;</button>
+  <a href="#servicios">Servicios</a>
+  <a href="#proyectos">Proyectos</a>
+  <a href="#nosotros">Nosotros</a>
+  <a href="#opiniones">Opiniones</a>
+  <a href="#contacto">Contacto</a>
+</div>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="hero-bg" style="background-image:url('{{HERO}}');"></div>
+    <div class="wrap hero-inner">
+      <p class="eyebrow">Alicatados · Albañilería · Pintura</p>
+      <h1>¿Necesitas pintar, alicatar o <span class="hl">reformar</span> tu casa?</h1>
+      <p class="hero-lead">Trabajos grandes o pequeños, me encargo yo mismo de principio a fin. Presupuesto claro y sin subcontratas: hablas conmigo desde el primer día.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-primary" href="https://wa.me/34692172407?text=Hola%20Adriano%2C%20me%20gustar%C3%ADa%20pedir%20presupuesto%20para%20una%20reforma." target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.1.2-.3.3-.4.1-.2 0-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4C6.6 7.1 6 7.9 6 9.3c0 1.4 1 2.8 1.1 3 .1.2 2 3 4.8 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.7-.7 1.9-1.3.2-.7.2-1.2.2-1.3-.1-.1-.3-.2-.6-.3z"/><path d="M12 2C6.5 2 2 6.5 2 12c0 1.9.5 3.7 1.5 5.3L2 22l4.8-1.5c1.5.8 3.3 1.3 5.2 1.3 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18.2c-1.7 0-3.3-.5-4.6-1.3l-.3-.2-3.3 1 1-3.2-.2-.3C3.6 15 3.1 13.5 3.1 12c0-4.9 4-8.9 8.9-8.9s8.9 4 8.9 8.9-4 8.9-8.9 8.9z"/></svg>
+          Pide tu presupuesto por WhatsApp
+        </a>
+        <a class="btn btn-outline" href="tel:+34692172407">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          Llámame ahora
+        </a>
+      </div>
+      <div class="hero-checks">
+        <div class="hero-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Presupuesto en 24-48h</div>
+        <div class="hero-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Sin subcontratas: hago yo el trabajo</div>
+        <div class="hero-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Trato directo, sin intermediarios</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="stats-bar">
+    <div class="stats-ticker"><span class="dot"></span>Obra nº 308 en curso en Castrelos (Vigo) · Última entrega hace <span id="daysAgo" data-anchor="2026-09-01">17</span> días</div>
+    <div class="wrap stats-grid">
+      <div>
+        <div class="stat-num">307<span class="unit">+</span></div>
+        <div class="stat-lbl">Reformas entregadas</div>
+      </div>
+      <div>
+        <div class="stat-num">30<span class="unit">+</span></div>
+        <div class="stat-lbl">Años de experiencia</div>
+      </div>
+      <div>
+        <div class="stat-num">100<span class="unit">%</span></div>
+        <div class="stat-lbl">Plazos cumplidos</div>
+      </div>
+      <div>
+        <div class="stat-num">97<span class="unit">%</span></div>
+        <div class="stat-lbl">Clientes satisfechos</div>
+      </div>
+    </div>
+  </div>
+
+  <section id="servicios" class="band-alt">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Servicios</p>
+        <h2>Todo lo que necesita un hogar, de una sola mano</h2>
+        <p>Empecé como alicatador y con los años fui sumando oficios. Hoy puedo encargarme de tu proyecto completo o de ese arreglo puntual que llevas tiempo posponiendo.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card featured">
+          <span class="service-badge">Más solicitado</span>
+          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18v3a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4v-3z"/><path d="M3 12V7a2 2 0 0 1 2-2h1"/><line x1="8" y1="19" x2="8" y2="21"/><line x1="16" y1="19" x2="16" y2="21"/></svg></div>
+          <h3>Cocinas y baños</h3>
+          <p>Los proyectos que más pido hacer: cambio de instalaciones, alicatado nuevo, mobiliario y ese salto de calidad que se ve a diario.</p>
+          <a class="service-more" href="https://wa.me/34692172407?text=Hola%20Adriano%2C%20me%20gustar%C3%ADa%20un%20presupuesto%20para%20reformar%20mi%20cocina%20o%20ba%C3%B1o." target="_blank" rel="noopener">Pedir presupuesto <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="8" height="8" rx="1"/><rect x="13" y="3" width="8" height="8" rx="1"/><rect x="3" y="13" width="8" height="8" rx="1"/><rect x="13" y="13" width="8" height="8" rx="1"/></svg></div>
+          <h3>Alicatados</h3>
+          <p>Baños, cocinas y suelos con porcelánico, gres o mármol. Cortes a inglete, juntas finas y un acabado que se nota en el detalle.</p>
+          <a class="service-more" href="https://wa.me/34692172407?text=Hola%20Adriano%2C%20me%20gustar%C3%ADa%20un%20presupuesto%20para%20alicatados." target="_blank" rel="noopener">Pedir presupuesto <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="6" height="4"/><rect x="9" y="11" width="6" height="4"/><rect x="15" y="11" width="6" height="4"/><rect x="6" y="7" width="6" height="4"/><rect x="12" y="7" width="6" height="4"/><line x1="3" y1="19" x2="21" y2="19"/></svg></div>
+          <h3>Albañilería</h3>
+          <p>Tabiquería, derribos, cerramientos y todo el trabajo de obra previa a la reforma. La base de cualquier proyecto bien hecho.</p>
+          <a class="service-more" href="https://wa.me/34692172407?text=Hola%20Adriano%2C%20me%20gustar%C3%ADa%20un%20presupuesto%20para%20un%20trabajo%20de%20alba%C3%B1iler%C3%ADa." target="_blank" rel="noopener">Pedir presupuesto <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="13" height="6" rx="1.5"/><line x1="9" y1="9" x2="9" y2="14"/><rect x="6.5" y="14" width="5" height="7" rx="1.2"/></svg></div>
+          <h3>Pintura</h3>
+          <p>Interiores y exteriores, alisado de paredes, gotelé eliminado y acabados lisos. Preparo la superficie con el mismo cuidado que la pintura final.</p>
+          <a class="service-more" href="https://wa.me/34692172407?text=Hola%20Adriano%2C%20me%20gustar%C3%ADa%20un%20presupuesto%20para%20pintura." target="_blank" rel="noopener">Pedir presupuesto <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M9 21v-5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v5"/></svg></div>
+          <h3>Reformas integrales</h3>
+          <p>Coordino toda la reforma de tu vivienda de principio a fin: demolición, instalaciones, alicatado, pintura y últimos detalles.</p>
+          <a class="service-more" href="https://wa.me/34692172407?text=Hola%20Adriano%2C%20me%20gustar%C3%ADa%20un%20presupuesto%20para%20una%20reforma%20integral." target="_blank" rel="noopener">Pedir presupuesto <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
+          <h3>Reparaciones y detalles</h3>
+          <p>Esa gotera, esa grieta, ese azulejo suelto. También atiendo arreglos puntuales, aunque sean pequeños.</p>
+          <a class="service-more" href="https://wa.me/34692172407?text=Hola%20Adriano%2C%20me%20gustar%C3%ADa%20consultar%20una%20reparaci%C3%B3n%20puntual." target="_blank" rel="noopener">Pedir presupuesto <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="como-trabajo">
+    <div class="wrap">
+      <div class="section-head" style="text-align:center;margin-left:auto;margin-right:auto;">
+        <p class="eyebrow">¿Cómo funciona?</p>
+        <h2>Tu reforma en 4 pasos sencillos</h2>
+        <p style="margin-left:auto;margin-right:auto;">Soy yo quien viene a verlo, yo quien hace el presupuesto y yo quien termina el trabajo. Sin intermediarios, sin sorpresas.</p>
+      </div>
+      <div class="steps-grid">
+        <div class="step-item">
+          <div class="step-num">01</div>
+          <div class="step-icon c-blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+          <h3>Visita gratuita</h3>
+          <p>Voy a ver el trabajo en persona, escucho lo que necesitas y tomo medidas. <strong>En 24 a 48 horas tienes el presupuesto cerrado.</strong></p>
+          <span class="step-day"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Día 1</span>
+        </div>
+        <div class="step-item">
+          <div class="step-num">02</div>
+          <div class="step-icon c-orange"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="m9 14 2 2 4-4"/></svg></div>
+          <h3>Presupuesto y firma</h3>
+          <p>Te explico cada partida y lo dejamos por escrito. <strong>Lo que acordamos es lo que pagas</strong>, sin letra pequeña ni costes de última hora.</p>
+          <span class="step-day"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Día 2 a 3</span>
+        </div>
+        <div class="step-item">
+          <div class="step-num">03</div>
+          <div class="step-icon c-green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+          <h3>Obra puntual y limpia</h3>
+          <p>Empiezo en la fecha acordada. <strong>Trabajo yo mismo, sin subcontratar a nadie</strong>, y dejo todo limpio y recogido cada día.</p>
+          <span class="step-day"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Según el alcance</span>
+        </div>
+        <div class="step-item">
+          <div class="step-num">04</div>
+          <div class="step-icon c-amber"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="16 8 10 14 8 12"/></svg></div>
+          <h3>Entrega y revisión</h3>
+          <p>Recorremos el trabajo juntos antes de darlo por terminado. <strong>Si algo no te convence, lo corrijo.</strong></p>
+          <span class="step-day"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Al finalizar</span>
+        </div>
+      </div>
+      <div class="steps-cta">
+        <a class="btn btn-primary" href="https://wa.me/34692172407?text=Hola%20Adriano%2C%20me%20gustar%C3%ADa%20pedir%20presupuesto%20para%20una%20reforma." target="_blank" rel="noopener">Empieza con tu visita gratuita
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <p class="note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Sin compromiso · Respuesta rápida por WhatsApp</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="proyectos" class="band-alt">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Proyectos</p>
+        <h2>Trabajos realizados en Vigo</h2>
+        <p>Una muestra de obras recientes: cocinas, baños, reformas completas y trabajos de exterior. Fotos reales, tomadas durante y después de cada obra.</p>
+      </div>
+      <div class="filter-tabs">
+        <button class="filter-tab active" data-filter="all">Todos</button>
+        <button class="filter-tab" data-filter="cocina">Cocinas</button>
+        <button class="filter-tab" data-filter="bano">Baños</button>
+        <button class="filter-tab" data-filter="reforma">Reformas</button>
+        <button class="filter-tab" data-filter="exterior">Exterior</button>
+        <button class="filter-tab" data-filter="antes">Antes de empezar</button>
+      </div>
+      <div class="gallery-grid" id="galleryGrid">
+        {{GALLERY_ITEMS}}
+      </div>
+    </div>
+  </section>
+
+  <section id="nosotros">
+    <div class="wrap about-grid">
+      <div class="about-copy">
+        <p class="eyebrow">Nosotros</p>
+        <h2 style="margin-bottom:18px;">30 años de oficio, <span class="hl">puestos en tu reforma</span></h2>
+        <p class="lead">Soy Adriano, y trato cada obra como si fuera mi propia casa.</p>
+        <p>Empecé como alicatador y, con los años, fui sumando albañilería, pintura y la coordinación de reformas completas. Hoy me encargo de cada proyecto de principio a fin: la primera visita, el presupuesto y la obra las hago yo mismo, sin subcontratas ni intermediarios.</p>
+        <ul class="about-list">
+          <li><span class="ai-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span><span><strong>30 años</strong> de experiencia en Vigo y alrededores</span></li>
+          <li><span class="ai-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></span><span>Trabajo yo mismo, <strong>sin subcontratas</strong></span></li>
+          <li><span class="ai-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></span><span>Presupuesto <strong>detallado</strong> antes de empezar</span></li>
+          <li><span class="ai-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>Obra <strong>limpia y ordenada</strong> cada día</span></li>
+        </ul>
+        <a class="btn btn-primary" href="https://wa.me/34692172407?text=Hola%20Adriano%2C%20me%20gustar%C3%ADa%20hablar%20sobre%20mi%20reforma." target="_blank" rel="noopener">Habla conmigo sobre tu reforma</a>
+      </div>
+      <div class="about-visual">
+        <div class="about-photos">
+          <div class="ap-item"><div class="ap-photo"><img src="{{IMG_60}}" alt="Antes: escombros tras la demolición"></div></div>
+          <div class="ap-item"><div class="ap-photo"><img src="{{IMG_04}}" alt="Cocina con encimera e inducción nuevas"></div></div>
+          <div class="ap-item"><div class="ap-photo"><img src="{{IMG_45}}" alt="Alicatado decorativo en zona de ducha"></div><span class="ap-cap">En obra</span></div>
+          <div class="ap-item"><div class="ap-photo"><img src="{{IMG_38}}" alt="Pasillo con pintura renovada"></div><span class="ap-cap">El resultado final</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="quote-band">
+    <div class="wrap">
+      <div class="quote-card">
+        <div class="quote-main">
+          <div class="quote-mark">&ldquo;</div>
+          <p class="quote-text">Soy yo quien viene a tu casa, quien te hace el presupuesto y quien termina la obra. No hay comerciales, no hay subcontratas: solo yo.</p>
+          <p class="quote-by">— Adriano · Alicatado y Reforma en General</p>
+        </div>
+        <ul class="quote-checks">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Hablas siempre conmigo, nunca con un comercial</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Presupuesto cerrado desde el primer día, sin sorpresas</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Sin estructura de empresa que financiar: lo que pagas va al material y a mi trabajo</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Presupuesto en 24-48 horas tras la visita</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Cada obra lleva mi nombre — la cuido como tal</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="compromiso" class="band-alt">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Compromiso</p>
+        <h2>Por qué trabajar conmigo</h2>
+        <p>No prometo lo que no puedo cumplir. Esto es lo que puedo garantizarte en cada obra:</p>
+      </div>
+      <div class="commit-grid">
+        <div class="commit-card">
+          <div class="commit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+          <h3>30 años de oficio</h3>
+          <p>La experiencia se nota en los detalles: cortes limpios, juntas rectas, acabados sin defectos.</p>
+        </div>
+        <div class="commit-card">
+          <div class="commit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+          <h3>Trato directo</h3>
+          <p>Hablas conmigo desde el primer WhatsApp hasta el último detalle de la obra. Nada se pierde en el camino.</p>
+        </div>
+        <div class="commit-card">
+          <div class="commit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+          <h3>Presupuesto sin sorpresas</h3>
+          <p>Todo por escrito y por partidas antes de empezar. Si algo cambia, te lo cuento antes de hacerlo.</p>
+        </div>
+        <div class="commit-card">
+          <div class="commit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></div>
+          <h3>Materiales de calidad</h3>
+          <p>Trabajo con materiales que aguantan el paso del tiempo, no solo los que quedan bien el primer día.</p>
+        </div>
+        <div class="commit-card">
+          <div class="commit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2m2 0v14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V6h12z"/></svg></div>
+          <h3>Obra limpia cada día</h3>
+          <p>Recojo y ordeno antes de irme. Tu casa sigue siendo tu casa mientras dura la reforma.</p>
+        </div>
+        <div class="commit-card">
+          <div class="commit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+          <h3>Disponible después de la obra</h3>
+          <p>Si algo necesita un retoque una vez terminado, sigo siendo el mismo número de siempre.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="zona">
+    <div class="wrap">
+      <div class="area-box">
+        <div>
+          <p class="eyebrow">Zona de trabajo</p>
+          <h2>Vigo y concellos cercanos</h2>
+          <p>Trabajo principalmente en Vigo capital, pero también me desplazo a los concellos de alrededor. Si tu obra está fuera de esta zona, escríbeme igualmente y lo hablamos.</p>
+        </div>
+        <div class="area-chips">
+          <span class="area-chip main">Vigo</span>
+          <span class="area-chip">Nigrán</span>
+          <span class="area-chip">Baiona</span>
+          <span class="area-chip">Gondomar</span>
+          <span class="area-chip">Porriño</span>
+          <span class="area-chip">Mos</span>
+          <span class="area-chip">Redondela</span>
+          <span class="area-chip">Cangas</span>
+          <span class="area-chip">Moaña</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="opiniones">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Opiniones y ubicación</p>
+        <h2>Encuéntrame y valórame en Google</h2>
+        <p>Si ya trabajamos juntos, tu opinión ayuda a que más vecinos de la zona confíen en el trabajo. Y si quieres saber dónde estoy, tienes el enlace directo a Google Maps.</p>
+      </div>
+      <div class="reviews-grid">
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <h3>Déjame tu opinión en Google</h3>
+          <p>Cada reseña ayuda a que más gente encuentre un profesional de confianza para su reforma.</p>
+          <a class="btn btn-primary" href="https://www.google.com/search?q=Adriano+Alicatado+y+Reforma+en+General+Vigo" target="_blank" rel="noopener">Escribir una reseña</a>
+        </div>
+        <div class="review-card">
+          <svg class="pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <h3>Ubicación</h3>
+          <p>Vigo, España. Consulta el mapa o pide indicaciones directamente en Google Maps.</p>
+          <a class="btn btn-outline" href="https://www.google.com/maps/search/?api=1&query=Vigo%2C+Espa%C3%B1a" target="_blank" rel="noopener">Abrir en Google Maps</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contacto" class="band-alt">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Contacto</p>
+        <h2>Hablemos de tu obra</h2>
+        <p>Cuéntame qué necesitas y te contesto en cuanto pueda. Lo más rápido es escribirme por WhatsApp.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <h3>Contacto directo</h3>
+          <p class="lead">Adriano, alicatado y reforma en general</p>
+          <div class="contact-line">
+            <div class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.1.2-.3.3-.4.1-.2 0-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4C6.6 7.1 6 7.9 6 9.3c0 1.4 1 2.8 1.1 3 .1.2 2 3 4.8 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.7-.7 1.9-1.3.2-.7.2-1.2.2-1.3-.1-.1-.3-.2-.6-.3z"/><path d="M12 2C6.5 2 2 6.5 2 12c0 1.9.5 3.7 1.5 5.3L2 22l4.8-1.5c1.5.8 3.3 1.3 5.2 1.3 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18.2c-1.7 0-3.3-.5-4.6-1.3l-.3-.2-3.3 1 1-3.2-.2-.3C3.6 15 3.1 13.5 3.1 12c0-4.9 4-8.9 8.9-8.9s8.9 4 8.9 8.9-4 8.9-8.9 8.9z"/></svg></div>
+            <div><span>WhatsApp</span><strong>692 172 407</strong></div>
+          </div>
+          <div class="contact-line">
+            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+            <div><span>Teléfono</span><strong>692 172 407</strong></div>
+          </div>
+          <div class="contact-line">
+            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z" opacity="0"/><path d="M22 6l-10 7L2 6"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg></div>
+            <div><span>Email</span><strong>adrianofumaca83@gmail.com</strong></div>
+          </div>
+          <div class="contact-line">
+            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+            <div><span>Zona</span><strong>Vigo, España</strong></div>
+          </div>
+          <a class="btn btn-primary" href="https://wa.me/34692172407?text=Hola%20Adriano%2C%20me%20gustar%C3%ADa%20pedir%20presupuesto%20para%20una%20reforma." target="_blank" rel="noopener">Escribir por WhatsApp</a>
+        </div>
+
+        <div class="form-card">
+          <h3>Pide tu presupuesto</h3>
+          <p class="lead">Rellena estos datos y se abrirá WhatsApp con tu mensaje ya escrito, listo para enviarme.</p>
+          <form id="quoteForm">
+            <div class="field">
+              <label for="f-name">Nombre</label>
+              <input id="f-name" type="text" placeholder="Tu nombre" required>
+            </div>
+            <div class="field">
+              <label for="f-phone">Teléfono</label>
+              <input id="f-phone" type="tel" placeholder="Un número donde localizarte" required>
+            </div>
+            <div class="field">
+              <label for="f-service">Tipo de trabajo</label>
+              <select id="f-service">
+                <option>Alicatados</option>
+                <option>Albañilería</option>
+                <option>Pintura</option>
+                <option>Reforma integral</option>
+                <option>Cocina o baño</option>
+                <option>Reparación puntual</option>
+                <option>Otro</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="f-msg">Cuéntame brevemente qué necesitas</label>
+              <textarea id="f-msg" placeholder="Por ejemplo: reformar un baño de 4m², cambiar azulejos de la cocina..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width:100%;">Enviar por WhatsApp</button>
+          </form>
+          <p class="form-note">Al enviar, se abre WhatsApp con tu mensaje ya redactado. Tú decides si lo envías. Tus datos no se guardan en ningún servidor.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+          <img src="{{LOGO_WORD}}" alt="Adriano, Reformas y Construcción">
+        </div>
+        <p>30 años de experiencia en reforma y construcción. Actualmente en Vigo y alrededores, con trato directo de principio a fin.</p>
+      </div>
+      <div>
+        <h4>Navegación</h4>
+        <ul>
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#proyectos">Proyectos</a></li>
+          <li><a href="#nosotros">Nosotros</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contacto</h4>
+        <ul>
+          <li><a href="https://wa.me/34692172407" target="_blank" rel="noopener">WhatsApp: 692 172 407</a></li>
+          <li><a href="tel:+34692172407">Teléfono: 692 172 407</a></li>
+          <li><a href="mailto:adrianofumaca83@gmail.com">adrianofumaca83@gmail.com</a></li>
+          <li><a href="#zona">Vigo, España</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Adriano. Alicatado y Reforma en General. Todos los derechos reservados.</span>
+      <span>Vigo, España</span>
+    </div>
+    <div class="footer-credit">
+      <img src="{{X7RG_LOGO}}" alt="x7rG Enterprise">
+      <span>Diseño y desarrollo: <a href="https://github.com/xx7rg" target="_blank" rel="noopener">x7rG ENTERPRISE</a></span>
+    </div>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/34692172407?text=Hola%20Adriano%2C%20me%20gustar%C3%ADa%20pedir%20presupuesto%20para%20una%20reforma." target="_blank" rel="noopener" aria-label="Escribir por WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.1.2-.3.3-.4.1-.2 0-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4C6.6 7.1 6 7.9 6 9.3c0 1.4 1 2.8 1.1 3 .1.2 2 3 4.8 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.7-.7 1.9-1.3.2-.7.2-1.2.2-1.3-.1-.1-.3-.2-.6-.3z"/><path d="M12 2C6.5 2 2 6.5 2 12c0 1.9.5 3.7 1.5 5.3L2 22l4.8-1.5c1.5.8 3.3 1.3 5.2 1.3 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18.2c-1.7 0-3.3-.5-4.6-1.3l-.3-.2-3.3 1 1-3.2-.2-.3C3.6 15 3.1 13.5 3.1 12c0-4.9 4-8.9 8.9-8.9s8.9 4 8.9 8.9-4 8.9-8.9 8.9z"/></svg>
+</a>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose">&times;</button>
+  <div>
+    <img id="lightboxImg" src="" alt="">
+    <p class="lightbox-cap" id="lightboxCap"></p>
+  </div>
+</div>
+
+<script>
+  // stats ticker: keep "hace X días" accurate automatically from a fixed anchor date
+  const daysAgoEl = document.getElementById('daysAgo');
+  if (daysAgoEl){
+    const anchor = new Date(daysAgoEl.dataset.anchor + 'T00:00:00Z');
+    const diffDays = Math.max(0, Math.floor((Date.now() - anchor.getTime()) / 86400000));
+    daysAgoEl.textContent = diffDays;
+  }
+
+  // radial reveal buttons: on hover, a circle grows from the pointer's entry
+  // point revealing a second (darker/inverted) copy of the label underneath,
+  // then shrinks back from the exit point on pointer leave. Pure CSS
+  // clip-path transition driven by a little pointer math, no dependencies.
+  (function initRadialButtons(){
+    document.querySelectorAll('.btn').forEach(function(btn){
+      if (btn.dataset.radialDone || !btn.childNodes.length) return;
+      btn.dataset.radialDone = '1';
+
+      const face = document.createElement('span');
+      face.className = 'btn-face';
+      while (btn.firstChild) face.appendChild(btn.firstChild);
+
+      const overlay = face.cloneNode(true);
+      overlay.className = 'btn-overlay';
+      overlay.setAttribute('aria-hidden', 'true');
+
+      btn.appendChild(face);
+      btn.appendChild(overlay);
+
+      function setClip(r, x, y){
+        const v = 'circle(' + r + '% at ' + x + '% ' + y + '%)';
+        overlay.style.clipPath = v;
+        overlay.style.webkitClipPath = v;
+      }
+      function metricsFromEvent(e){
+        const rect = btn.getBoundingClientRect();
+        const px = e.clientX - rect.left, py = e.clientY - rect.top;
+        const unit = Math.hypot(rect.width, rect.height) / Math.SQRT2 || 1;
+        const far = Math.max(
+          Math.hypot(px, py),
+          Math.hypot(rect.width - px, py),
+          Math.hypot(px, rect.height - py),
+          Math.hypot(rect.width - px, rect.height - py)
+        );
+        return {
+          x: rect.width ? (px / rect.width) * 100 : 50,
+          y: rect.height ? (py / rect.height) * 100 : 50,
+          max: (far / unit) * 100 + 2
+        };
+      }
+      btn.addEventListener('pointerenter', function(e){
+        if (e.pointerType === 'touch') return;
+        const m = metricsFromEvent(e);
+        overlay.style.transition = 'none';
+        setClip(0, m.x, m.y);
+        overlay.offsetHeight; // force reflow so the next clip change animates
+        overlay.style.transition = '';
+        requestAnimationFrame(function(){ setClip(m.max, m.x, m.y); });
+      });
+      btn.addEventListener('pointerleave', function(e){
+        if (e.pointerType === 'touch') return;
+        const m = metricsFromEvent(e);
+        setClip(0, m.x, m.y);
+      });
+    });
+  })();
+
+  // reveal-on-scroll: adds .in-view once when an element enters the viewport
+  (function initScrollReveal(){
+    const targets = document.querySelectorAll('.steps-grid, .quote-band');
+    if (!targets.length) return;
+    if (!('IntersectionObserver' in window)){
+      targets.forEach(function(el){ el.classList.add('in-view'); });
+      return;
+    }
+    const io = new IntersectionObserver(function(entries, obs){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting){
+          entry.target.classList.add('in-view');
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.3 });
+    targets.forEach(function(el){ io.observe(el); });
+  })();
+
+  // mobile nav
+  const burger = document.getElementById('burgerBtn');
+  const mobileNav = document.getElementById('mobileNav');
+  const scrim = document.getElementById('scrim');
+  const closeNav = document.getElementById('closeNav');
+  function openNav(){mobileNav.classList.add('open');scrim.classList.add('open');}
+  function shutNav(){mobileNav.classList.remove('open');scrim.classList.remove('open');}
+  burger && burger.addEventListener('click', openNav);
+  closeNav && closeNav.addEventListener('click', shutNav);
+  scrim && scrim.addEventListener('click', shutNav);
+  document.querySelectorAll('.mobile-nav a').forEach(a=>a.addEventListener('click', shutNav));
+
+  // gallery filter
+  const tabs = document.querySelectorAll('.filter-tab');
+  const items = document.querySelectorAll('#galleryGrid .g-item');
+  tabs.forEach(tab=>{
+    tab.addEventListener('click', ()=>{
+      tabs.forEach(t=>t.classList.remove('active'));
+      tab.classList.add('active');
+      const f = tab.dataset.filter;
+      items.forEach(it=>{
+        const show = f === 'all' || it.dataset.cat === f;
+        it.style.display = show ? '' : 'none';
+      });
+    });
+  });
+
+  // lightbox
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightboxImg');
+  const lightboxCap = document.getElementById('lightboxCap');
+  document.querySelectorAll('#galleryGrid .g-item').forEach(it=>{
+    it.addEventListener('click', ()=>{
+      const img = it.querySelector('img');
+      lightboxImg.src = img.src;
+      lightboxImg.alt = img.alt;
+      lightboxCap.textContent = img.alt;
+      lightbox.classList.add('open');
+    });
+  });
+  document.getElementById('lightboxClose').addEventListener('click', ()=>lightbox.classList.remove('open'));
+  lightbox.addEventListener('click', (e)=>{ if(e.target === lightbox) lightbox.classList.remove('open'); });
+
+  // quote form -> whatsapp
+  const form = document.getElementById('quoteForm');
+  form && form.addEventListener('submit', function(e){
+    e.preventDefault();
+    const name = document.getElementById('f-name').value.trim();
+    const phone = document.getElementById('f-phone').value.trim();
+    const service = document.getElementById('f-service').value;
+    const msg = document.getElementById('f-msg').value.trim();
+    let text = `Hola Adriano, soy ${name}.%0AMe interesa: ${service}.%0A${msg ? 'Detalles: ' + msg + '.%0A' : ''}Mi teléfono: ${phone}.`;
+    window.open(`https://wa.me/34692172407?text=${encodeURIComponent(text.replace(/%0A/g,'\n'))}`, '_blank');
+  });
+</script>
