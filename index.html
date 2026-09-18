@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Adriano Reformas Vigo</title>
 <meta name="description" content="30 años de experiencia en reforma y construcción. Actualmente en Vigo: alicatados, albañilería, pintura y reformas integrales con trabajo directo y presupuesto claro.">
+<link rel="canonical" href="https://adrianoreformas.com/">
 
 <link rel="icon" type="image/png" href="selected/favicon.png">
 <link rel="apple-touch-icon" href="selected/favicon.png">
@@ -26,10 +27,45 @@
 <meta name="twitter:description" content="30 años de experiencia en reforma y construcción. Vigo y alrededores: alicatados, albañilería, pintura y reformas integrales con trabajo directo y presupuesto claro.">
 <meta name="twitter:image" content="https://adrianoreformas.com/selected/logo_full.jpg">
 
+<!-- Structured data para el buscador de Google (LocalBusiness) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "GeneralContractor",
+  "name": "Adriano — Alicatado y Reforma en General",
+  "image": "https://adrianoreformas.com/selected/logo_full.jpg",
+  "url": "https://adrianoreformas.com/",
+  "telephone": "+34692172407",
+  "email": "adrianofumaca83@gmail.com",
+  "priceRange": "€€",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Rúa do Progreso, 7, piso 1, Santiago de Vigo",
+    "postalCode": "36202",
+    "addressLocality": "Vigo",
+    "addressRegion": "Pontevedra",
+    "addressCountry": "ES"
+  },
+  "areaServed": [
+    { "@type": "City", "name": "Vigo" },
+    { "@type": "City", "name": "Nigrán" },
+    { "@type": "City", "name": "Baiona" },
+    { "@type": "City", "name": "Gondomar" },
+    { "@type": "City", "name": "O Porriño" },
+    { "@type": "City", "name": "Mos" },
+    { "@type": "City", "name": "Redondela" },
+    { "@type": "City", "name": "Cangas" },
+    { "@type": "City", "name": "Moaña" }
+  ],
+  "sameAs": [
+    "https://www.google.com/maps/search/?api=1&query=Adriano+alicatado+y+reforma+en+general+Vigo"
+  ]
+}
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600;700&family=Caveat:wght@600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
 <style>
   :root{
     /* Official brand palette (Adriano brand guide): Azul Obra, Laranja, Grafite, Concreto, Branco */
@@ -1203,7 +1239,6 @@
   </div>
 </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
 <script>
   // stats ticker: keep "hace X días" accurate automatically from a fixed anchor date
   const daysAgoEl = document.getElementById('daysAgo');
@@ -1216,10 +1251,43 @@
   // service-area map: Leaflet + free OpenStreetMap tiles (no API key needed).
   // Clicking a chip flies the map to that concello; a translucent circle
   // around Vigo gives a rough sense of the working radius.
+  // Leaflet itself (CSS+JS) is only fetched once this section is about to
+  // enter the viewport, so visitors who never scroll this far don't pay
+  // for it.
   (function initAreaMap(){
     const mapEl = document.getElementById('areaMap');
-    if (!mapEl || typeof L === 'undefined') return;
+    if (!mapEl) return;
 
+    let started = false;
+    function loadLeaflet(){
+      if (started) return;
+      started = true;
+      const css = document.createElement('link');
+      css.rel = 'stylesheet';
+      css.href = 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css';
+      document.head.appendChild(css);
+
+      const script = document.createElement('script');
+      script.src = 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js';
+      script.onload = buildMap;
+      document.body.appendChild(script);
+    }
+
+    if ('IntersectionObserver' in window){
+      const io = new IntersectionObserver(function(entries, obs){
+        entries.forEach(function(entry){
+          if (entry.isIntersecting){
+            loadLeaflet();
+            obs.disconnect();
+          }
+        });
+      }, { rootMargin: '400px 0px' });
+      io.observe(mapEl);
+    } else {
+      loadLeaflet();
+    }
+
+    function buildMap(){
     const vigo = [42.2358, -8.7267];
     const map = L.map(mapEl, { scrollWheelZoom: false }).setView(vigo, 10);
 
@@ -1268,6 +1336,7 @@
     });
 
     setTimeout(function(){ map.invalidateSize(); }, 250);
+    } // end buildMap
   })();
 
   // radial reveal buttons: on hover, a circle grows from the pointer's entry
