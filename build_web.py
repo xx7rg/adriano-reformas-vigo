@@ -55,17 +55,6 @@ for num, cat, cap, wide in items:
     token = "{{IMG_%s}}" % num
     html = html.replace(token, f"selected/img_{num}.jpg")
 
-# The source template is a bare fragment (no doctype/html/head/body) meant to
-# be dropped into a wrapper by whatever build step uses it. Wrap it properly
-# here so the deployed page isn't served in quirks mode.
-head, body = html.split("</style>", 1)
-html = (
-    "<!DOCTYPE html>\n<html lang=\"es\">\n<head>\n"
-    "<meta charset=\"UTF-8\">\n"
-    "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n"
-    + head + "</style>\n</head>\n<body>" + body + "\n</body>\n</html>\n"
-)
-
 out_path = os.path.join(BASE, "index.html")
 with open(out_path, "w", encoding="utf-8") as f:
     f.write(html)
