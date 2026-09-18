@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="selected/logo_mark.png" alt="Logo de Adriano — Alicatado y Reforma en General" width="120" />
+<img src="selected/x7rg_mark.png" alt="Logo oficial x7rG Enterprise" width="120" />
 
 # Site do Adriano — Alicatado y Reforma en General
 
