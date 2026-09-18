@@ -1,0 +1,9 @@
+# Local build output (regenerate with build.py)
+dist/
+
+# Client-provided raw brand assets, not part of the published site
+img/
+
+# Local AI coding tool config/skills (not part of the site)
+.claude/
+.agents/
