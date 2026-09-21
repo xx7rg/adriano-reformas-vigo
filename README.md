@@ -81,11 +81,10 @@ vêm no Python padrão). Não precisa de Node, npm nem nenhum framework.
 
 <div align="center">
 
-Desenvolvido por **x7rG Enterprise**
+**© 2026 x7rG ENTERPRISE™** — Todos os direitos reservados.
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/rgds/)
-[![Instagram](https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/_7ragnar/)
-
-© 2026 x7rG ENTERPRISE™ — Todos os direitos reservados.
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/rgds)
+&nbsp;
+[![Instagram](https://img.shields.io/badge/Instagram-E4405F?style=flat&logo=instagram&logoColor=white)](https://www.instagram.com/_7ragnar/)
 
 </div>
