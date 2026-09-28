@@ -6,6 +6,8 @@
 
 Landing page para o negócio de reformas do Adriano, em Vigo (Espanha).
 
+<img src="selected/hero.jpg" alt="Apresentação do site Adriano Reformas em Vigo" width="760" />
+
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
@@ -39,18 +41,34 @@ Landing page para o negócio de reformas do Adriano, em Vigo (Espanha).
 
 ## Como editar
 
-1. Abra a pasta no VSCode.
-2. Edite `template.html` normalmente (é HTML puro — recomendo a extensão
+1. Clone o repositório e entre na pasta:
+
+   ```bash
+   git clone https://github.com/xx7rg/adriano-reformas-vigo.git
+   cd adriano-reformas-vigo
+   ```
+
+2. Abra a pasta no VSCode.
+3. Edite `template.html` normalmente (é HTML puro — recomendo a extensão
    "Live Server" do VSCode para pré-visualizar, mas repare que as tags
    `{{IMG_XX}}` só viram imagens de verdade depois de rodar um dos builds).
-3. Depois de qualquer alteração, gere os arquivos finais rodando:
+4. Depois de qualquer alteração, gere os arquivos finais.
+
+   No Windows (PowerShell):
+
+   ```powershell
+   python build.py       # gera dist/adriano-vigo-reformas.html (autocontido)
+   python build_web.py   # gera index.html (usado no deploy do GitHub Pages)
+   ```
+
+   No macOS ou Linux:
 
    ```bash
    python3 build.py       # gera dist/adriano-vigo-reformas.html (autocontido)
    python3 build_web.py   # gera index.html (usado no deploy do GitHub Pages)
    ```
 
-4. Para publicar uma atualização no site já no ar, dê commit e push em
+5. Para publicar uma atualização no site já no ar, dê commit e push em
    `main` — o GitHub Pages faz o rebuild automaticamente.
 
 ## Requisitos
